@@ -30,18 +30,18 @@ public class CNFetch {
     public static void onClientStarting(FMLClientSetupEvent event) {
         File file0 = new File(System.getProperty("user.dir") + "/.cnfetch/pack.mcmeta");
         if(!file0.exists()){
-            new FileDownloadManager("https://cdn.jsdelivr.net/gh/APFC-org/weblateTrans@0.0.8/pack.mcmeta", "pack.mcmeta", System.getProperty("user.dir")+"/.cnfetch").start("dl mcmeta");
+            new FileDownloadManager("https://cdn.jsdelivr.net/gh/APFC-org/weblateTrans/pack.mcmeta", "pack.mcmeta", System.getProperty("user.dir")+"/.cnfetch").start("dl mcmeta");
         }
         File file1 = new File(System.getProperty("user.dir") + "/.cnfetch/pack.png");
         if(!file1.exists()){
-            new FileDownloadManager("https://cdn.jsdelivr.net/gh/APFC-org/weblateTrans@0.0.8/pack.png", "pack.png", System.getProperty("user.dir")+"/.cnfetch").start("dl png");
+            new FileDownloadManager("https://cdn.jsdelivr.net/gh/APFC-org/weblateTrans/pack.png", "pack.png", System.getProperty("user.dir")+"/.cnfetch").start("dl png");
         }
         ModList.get().getMods().forEach(i -> {
             File file = new File(System.getProperty("user.dir") + "/.cnfetch/assets/"+i.getModId()+"/lang/zh_cn.json");
             if(file.exists()){
                 return;
             }
-            FileDownloadManager ip = new FileDownloadManager("https://cdn.jsdelivr.net/gh/APFC-org/weblateTrans@0.0.8/assets/" + i.getModId() + "/lang/zh_cn.json", "zh_cn.json", System.getProperty("user.dir")+"/.cnfetch/assets/"+i.getModId()+"/lang");
+            FileDownloadManager ip = new FileDownloadManager("https://cdn.jsdelivr.net/gh/APFC-org/weblateTrans/assets/" + i.getModId() + "/lang/zh_cn.json", "zh_cn.json", System.getProperty("user.dir")+"/.cnfetch/assets/"+i.getModId()+"/lang");
             ip.start("dl " + i.getModId());
         });
     }
