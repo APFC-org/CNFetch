@@ -46,12 +46,4 @@ public class CNFetch {
         });
     }
 
-    private static void load(File file){
-        try {
-            FileInputStream input = new FileInputStream(file);
-            LanguageMap.func_240593_a_(input,(a,b)->I18n.field_239501_a_.getLanguageData().put(a,b));
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-    }
 }
